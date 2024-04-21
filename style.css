@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+} /*border-box говорит браузеру учитывать любые границы 
+и внутренние отступы в значениях, которые вы указываете в ширине и высоте элемента*/
+
+body {
+    margin: 0; /*убираем отступы у элемента body*/
+    min-height: 100vh; /*мин. высота, равная высоте области просмотра*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*стилизация калькулятора*/
+.calc {  
+    width: 600px; /*ширина*/
+    border: solid 2px #555; /*граница*/
+    border-radius: 10px; /*скругление*/
+    background-color: #888; /*фон*/
+    padding: 20px; /*внутренние отступы*/
+
+    display: grid; /*тип отображения блока*/
+    grid-template-columns: repeat(4, 1fr); /*шаблон для колонок*/
+    grid-auto-rows: 70px; /*задаем размер для всех рядов по умолчанию*/
+    gap: 20px; /*отступы между эл-ми*/
+}
+
+/*блок с выводом результатов*/
+.calc__result {
+    grid-column: 1 / -1;/*задаем расположение блока с выводом результатов от первой до последней линии*/
+    background-color: #333;
+    color: #fff;
+    font-size: 56px;
+    padding: 10px;
+}
+
+/*кнопки*/
+.calc__btn {
+    border: none;
+    border-radius: 5px;
+    background-color: #eee;
+    cursor: pointer;
+  
+    font-size: 30px;  
+    box-shadow: 2px 3px 2px rgb(0 0 0 / 50%);
+}
+.calc__btn:hover {
+    opacity: 0.9; /*прозрачность кнопок при наведении*/
+}
+.calc__btn:active {
+    box-shadow: 1px 1px 2px rgb(0 0 0 / 50%); 
+}
+
+/*операторы*/
+.calc__btn_operator {
+    background-color: #ffe2ae;
+}
+.calc__btn_reset {
+    background-color: #ff5050;
+    color: #fff;  
+}
+.calc__btn_equal { 
+    background-color: #5b50ff; 
+    color: #fff;  
+    grid-column: 2 / -2;
+  }
