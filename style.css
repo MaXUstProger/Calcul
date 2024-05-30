@@ -20,7 +20,7 @@ body {
     padding: 20px; /*внутренние отступы*/
 
     display: grid; /*тип отображения блока*/
-    grid-template-columns: repeat(4, 1fr); /*шаблон для колонок*/
+    /* grid-template-columns: repeat(5, 1fr); шаблон для колонок */
     grid-auto-rows: 70px; /*задаем размер для всех рядов по умолчанию*/
     gap: 20px; /*отступы между эл-ми*/
 }
@@ -49,6 +49,13 @@ body {
 }
 .calc__btn:active {
     box-shadow: 1px 1px 2px rgb(0 0 0 / 50%); 
+}
+
+/*блоки с кнопками*/
+.div_btn {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column: 1 / -1; gap: 20px;
 }
 
 /*операторы*/
